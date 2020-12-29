@@ -21,7 +21,7 @@
       :style="`top: ${card.y}px; left: ${card.x}px`"
     >
       {{ card.text }}
-      <button @click="removeCard(key)">X</button>
+      <button class="button" @click="removeCard(key)">X</button>
     </div>
   </div>
 </template>
@@ -50,9 +50,9 @@ export default {
       isOverCard: false,
     };
   },
-  firebase: {
-    //cards: db.ref("cards"),
-  },
+  /*firebase: {
+    cards: db.ref("cards"),
+  },*/
   methods: {
     onMousedown(e) {
       if (e.target.id === "app") {
@@ -164,5 +164,17 @@ input {
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.button {
+  background-color:rgb(126, 126, 126);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50%;
 }
 </style>
